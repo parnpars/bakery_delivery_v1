@@ -299,10 +299,11 @@ sources/0 = SubResource("TileSetAtlasSource_ioep0")
 [node name="Baker" type="CharacterBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yui1g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_1uu6c")
 format = 2
-layer_0/tile_data = PackedInt32Array(720900, 917504, 0, 786436, 917504, 1, 720901, 983040, 0, 786437, 983040, 1)
+layer_0/tile_data = PackedInt32Array(720900, 0, 2, 786436, 0, 3, 720901, 65536, 2, 786437, 65536, 3)

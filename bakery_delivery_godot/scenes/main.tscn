@@ -950,6 +950,6 @@ layer_0/tile_data = PackedInt32Array(-4, 65536, 0, -3, 65536, 0, -2, 65536, 0, -
 
 [node name="Baker" parent="house interior" instance=ExtResource("7_cei8p")]
 texture_filter = 1
-position = Vector2(17, 64)
+position = Vector2(26, 59)
 scale = Vector2(1.08421, 0.954738)
 script = ExtResource("8_k3hdb")

@@ -21,6 +21,11 @@ window/size/viewport_width=2000
 window/size/viewport_height=1000
 window/size/initial_position=Vector2i(144, 0)
 
+[filesystem]
+
+import/blender/enabled=false
+import/fbx/enabled=false
+
 [input]
 
 walk_right={

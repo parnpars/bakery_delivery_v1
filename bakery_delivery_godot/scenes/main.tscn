@@ -4721,7 +4721,7 @@ scale = Vector2(1.08421, 0.954738)
 script = ExtResource("8_k3hdb")
 
 [node name="Camera2D" type="Camera2D" parent="baker_house_base/baker"]
-zoom = Vector2(3, 3)
+zoom = Vector2(4, 4)
 
 [node name="house_interior" type="TileMap" parent="baker_house_base"]
 position = Vector2(38, 53)

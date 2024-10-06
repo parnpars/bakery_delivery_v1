@@ -79,7 +79,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wtisu"]
-size = Vector2(10, 21)
+size = Vector2(8, 4)
 
 [node name="Baker" type="CharacterBody2D"]
 
@@ -89,5 +89,5 @@ sprite_frames = SubResource("SpriteFrames_gkx64")
 animation = &"walk_right"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.5)
+position = Vector2(0, 11)
 shape = SubResource("RectangleShape2D_wtisu")

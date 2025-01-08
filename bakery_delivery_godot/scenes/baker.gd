@@ -45,3 +45,14 @@ func _physics_process(delta):
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
 	move_and_slide()
+	
+	
+	var collision = self.move_and_collide(Vector2(velocity.x, velocity.y), true)
+	if collision:
+		var collider_rid = collision.get_collider_rid()
+		
+		if collider_rid.get_id() == 6485400617072:
+			print('yippieeee')
+			#if collider_rid and PhysicsServer2D.body_get_collision_layer(collider_rid) == 2:
+				#print("collision!!")
+				#self.move_and_collide(collision.get_remainder())/

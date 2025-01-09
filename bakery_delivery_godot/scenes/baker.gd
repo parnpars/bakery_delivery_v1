@@ -50,9 +50,12 @@ func _physics_process(delta):
 	var collision = self.move_and_collide(Vector2(velocity.x, velocity.y), true)
 	if collision:
 		var collider_rid = collision.get_collider_rid()
-		
+		print(collider_rid)
 		if collider_rid.get_id() == 6485400617072:
-			print('yippieeee')
+			print('Go outside?')
 			#if collider_rid and PhysicsServer2D.body_get_collision_layer(collider_rid) == 2:
 				#print("collision!!")
 				#self.move_and_collide(collision.get_remainder())/
+# spis på - 6107443494963
+# kyl på - 6300717023306 &&  6317896892494
+#handfat - 6416681140320

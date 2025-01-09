@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://be6sn1jfqlgfe"]
+[gd_scene load_steps=48 format=4 uid="uid://be6sn1jfqlgfe"]
 
 [ext_resource type="Texture2D" uid="uid://i8s1qlimvxo2" path="res://assets/TopDownHouse_FloorsAndWalls.png" id="1_0hupy"]
 [ext_resource type="Texture2D" uid="uid://dbkbsyqyv2uhg" path="res://assets/interior free.png" id="2_2m0o1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://mcx1s4b5ch3x" path="res://assets/TopDownHouse_SmallItems.png" id="6_0h1ax"]
 [ext_resource type="PackedScene" uid="uid://c548xhftw3id3" path="res://scenes/baker.tscn" id="7_cei8p"]
 [ext_resource type="Script" path="res://scenes/baker.gd" id="8_k3hdb"]
+[ext_resource type="Script" path="res://scenes/oven_area.gd" id="9_uipsa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_07l6c"]
 texture = ExtResource("1_0hupy")
@@ -4840,6 +4841,46 @@ physics_layer_0/collision_layer = 1
 sources/4 = SubResource("TileSetAtlasSource_wcx2p")
 sources/5 = SubResource("TileSetAtlasSource_v47cm")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y2egl"]
+size = Vector2(27.0567, 31)
+
+[sub_resource type="GDScript" id="GDScript_xg7sg"]
+script/source = "extends Area2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+	
+
+
+func _on_body_exited(body: Node2D) -> void:
+	if (body.is_in_group)(\"player\"):
+		print(\"leave home?\")
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfw0x"]
+size = Vector2(3.42857, 48.5)
+
+[sub_resource type="GDScript" id="GDScript_xmmkg"]
+script/source = "extends CollisionShape2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
 
@@ -4851,7 +4892,7 @@ scale = Vector2(0.996673, 1)
 tile_set = SubResource("TileSet_lilro")
 format = 2
 
-[node name="baker" parent="baker_house_base" instance=ExtResource("7_cei8p")]
+[node name="baker" parent="baker_house_base" groups=["player"] instance=ExtResource("7_cei8p")]
 z_index = 2
 y_sort_enabled = true
 texture_filter = 1
@@ -4887,17 +4928,19 @@ tile_set = SubResource("TileSet_1c1pq")
 [node name="oven_off" type="TileMapLayer" parent="baker_house_base/house_interior"]
 y_sort_enabled = true
 use_parent_material = true
-position = Vector2(0, -2.77778)
+position = Vector2(0.137879, 1.38889)
 tile_map_data = PackedByteArray("AAD+//v/AAAEAAwAAAD+//z/AAAEAA0AAAD+//3/AAAEAA4AAAD///v/AAAFAAwAAAD///z/AAAFAA0AAAD///3/AAAFAA4AAAA=")
 tile_set = SubResource("TileSet_shia6")
 
 [node name="fridge_closed" type="TileMapLayer" parent="baker_house_base/house_interior"]
+visible = false
 y_sort_enabled = true
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD8//r/AAACAAwAAAD8//v/AAACAA0AAAD8//z/AAACAA4AAAD8//3/AAACAA8AAAD9//r/AAADAAwAAAD9//v/AAADAA0AAAD9//z/AAADAA4AAAD9//3/AAADAA8AAAA=")
 tile_set = SubResource("TileSet_2hs83")
 
 [node name="fridge_open" type="TileMapLayer" parent="baker_house_base/house_interior"]
+visible = false
 y_sort_enabled = true
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD8//r/BQACAAwAAAD8//v/BQACAA0AAAD8//z/BQACAA4AAAD8//3/BQACAA8AAAD9//r/BQADAAwAAAD9//v/BQADAA0AAAD9//z/BQADAA4AAAD9//3/BQADAA8AAAA=")
@@ -4914,7 +4957,24 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAD8////AAABAAAAAAD9////AAABAAAAAAD+////AAABAAAAAAD/////AAABAAAAAAAAAP//AAABAAAAAAABAP//AAABAAAAAAACAP//AAABAAAAAAADAP//AAABAAAAAAAEAP//AAABAAAAAAAFAP//AAABAAAAAAAGAP//AAABAAAAAAAIAP//AAABAAAAAAAHAP//AAABAAAAAAD7////AAAAAAAAAAD7/wAAAAAAAAEAAAD7/wEAAAAAAAEAAAD7/wYAAAAAAAEAAAD7/wgAAAAAAAEAAAD7/wcAAAAAAAEAAAD7/wkAAAAAAAgAAAD8/wkAAAABAAgAAAD9/wkAAAABAAgAAAD+/wkAAAABAAgAAAD//wkAAAABAAgAAAAAAAkAAAABAAgAAAABAAkAAAABAAgAAAACAAkAAAABAAgAAAADAAkAAAABAAgAAAAEAAkAAAABAAgAAAAFAAkAAAABAAgAAAAGAAkAAAABAAgAAAAHAAkAAAABAAgAAAAIAAkAAAABAAgAAAAJAAkAAAARAAgAAAAJAAgAAAARAAUAAAAJAAYAAAARAAUAAAAJAAUAAAARAAUAAAAJAAQAAAARAAUAAAAJAAMAAAARAAUAAAAJAAIAAAARAAUAAAAJAAEAAAARAAUAAAAJAP//AAARAAAAAAAJAAAAAAARAAQAAAD7/wMAAAAAAAMAAAD7/wQAAAAAAAMAAAD7/wUAAAAAAAMAAAD7/wIAAAAAAAEAAAD8/wIAAAABAAEAAAD9/wIAAAABAAEAAAD+/wIAAAABAAEAAAD//wIAAAABAAEAAAAAAAIAAAABAAEAAAABAAIAAAABAAEAAAACAAIAAAABAAEAAAADAAIAAAABAAEAAAAEAAIAAAABAAEAAAAFAAIAAAABAAEAAAAGAAIAAAABAAEAAAAHAAIAAAABAAEAAAAIAAIAAAABAAEAAAAIAAEAAAABAAEAAAAIAAAAAAABAAEAAAAHAAAAAAABAAEAAAAGAAAAAAABAAEAAAAFAAAAAAABAAEAAAAEAAAAAAABAAEAAAADAAAAAAABAAEAAAACAAAAAAABAAEAAAABAAAAAAABAAEAAAAAAAAAAAABAAEAAAD+/wAAAAABAAEAAAD9/wAAAAABAAEAAAD8/wAAAAABAAEAAAD8/wEAAAABAAEAAAD9/wEAAAABAAEAAAD+/wEAAAABAAEAAAD//wEAAAABAAEAAAAAAAEAAAABAAEAAAABAAEAAAABAAEAAAACAAEAAAABAAEAAAADAAEAAAABAAEAAAAEAAEAAAABAAEAAAAFAAEAAAABAAEAAAAGAAEAAAABAAEAAAAHAAEAAAABAAEAAAD8/wcAAAAEAAUAAAD9/wcAAAAEAAUAAAD+/wcAAAAEAAUAAAD//wcAAAAEAAUAAAAAAAcAAAAEAAUAAAABAAcAAAAEAAUAAAACAAcAAAAEAAUAAAADAAcAAAAEAAUAAAAEAAcAAAAEAAUAAAAFAAcAAAAEAAUAAAAGAAcAAAAEAAUAAAAHAAcAAAAEAAUAAAAIAAcAAAAEAAUAAAAIAAgAAAAEAAUAAAAHAAgAAAAEAAUAAAAGAAgAAAAEAAUAAAAFAAgAAAAEAAUAAAAEAAgAAAAEAAUAAAADAAgAAAAEAAUAAAACAAgAAAAEAAUAAAABAAgAAAAEAAUAAAAAAAgAAAAEAAUAAAD//wgAAAAEAAUAAAD+/wgAAAAEAAUAAAD9/wgAAAAEAAUAAAD8/wgAAAAEAAUAAAD8/wYAAAAEAAUAAAD9/wYAAAAEAAUAAAD+/wYAAAAEAAUAAAD//wYAAAAEAAUAAAAAAAYAAAAEAAUAAAABAAYAAAAEAAUAAAACAAYAAAAEAAUAAAADAAYAAAAEAAUAAAAEAAYAAAAEAAUAAAAFAAYAAAAEAAUAAAAGAAYAAAAEAAUAAAAHAAYAAAAEAAUAAAAIAAYAAAAEAAUAAAD8/wMAAAAHAAUAAAD8/wQAAAAHAAUAAAD8/wUAAAAHAAUAAAD9/wUAAAAHAAUAAAD+/wUAAAAHAAUAAAD//wUAAAAHAAUAAAAAAAUAAAAHAAUAAAABAAUAAAAHAAUAAAACAAUAAAAHAAUAAAADAAUAAAAHAAUAAAAEAAUAAAAHAAUAAAAFAAUAAAAHAAUAAAAGAAUAAAAHAAUAAAAHAAUAAAAHAAUAAAAIAAUAAAAHAAUAAAAIAAQAAAAHAAUAAAAIAAMAAAAHAAUAAAAHAAMAAAAHAAUAAAAGAAMAAAAHAAUAAAAFAAMAAAAHAAUAAAAEAAMAAAAHAAUAAAADAAMAAAAHAAUAAAACAAMAAAAHAAUAAAABAAMAAAAHAAUAAAAAAAMAAAAHAAUAAAD//wMAAAAHAAUAAAD+/wMAAAAHAAUAAAD9/wMAAAAHAAUAAAD9/wQAAAAHAAUAAAD+/wQAAAAHAAUAAAD//wQAAAAHAAUAAAAAAAQAAAAHAAUAAAABAAQAAAAHAAUAAAACAAQAAAAHAAUAAAADAAQAAAAHAAUAAAAEAAQAAAAHAAUAAAAFAAQAAAAHAAUAAAAGAAQAAAAHAAUAAAAHAAQAAAAHAAUAAAAJAAcAAAARAAUAAAD//wAAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_lilro")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="OvenArea" type="Area2D" parent="baker_house_base"]
+z_index = 1
+script = ExtResource("9_uipsa")
 
-[node name="PlayerDoorCollision" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="baker_house_base/OvenArea"]
+z_index = 1
+position = Vector2(23.5951, 11.5)
+shape = SubResource("RectangleShape2D_y2egl")
+
+[node name="PlayerDoorArea" type="Area2D" parent="."]
+script = SubResource("GDScript_xg7sg")
+
+[node name="PlayerDoorCollision" type="CollisionShape2D" parent="PlayerDoorArea"]
 z_index = 2
+position = Vector2(13.5, 100.75)
+scale = Vector2(0.875001, 1)
+shape = SubResource("RectangleShape2D_lfw0x")
+script = SubResource("GDScript_xmmkg")
+
+[connection signal="body_entered" from="baker_house_base/OvenArea" to="baker_house_base/OvenArea" method="_on_body_entered"]
+[connection signal="body_exited" from="PlayerDoorArea" to="PlayerDoorArea" method="_on_body_exited"]

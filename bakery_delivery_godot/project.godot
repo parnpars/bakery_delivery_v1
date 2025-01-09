@@ -26,6 +26,10 @@ window/size/initial_position=Vector2i(144, 0)
 import/blender/enabled=false
 import/fbx/enabled=false
 
+[global_group]
+
+player=""
+
 [input]
 
 walk_right={

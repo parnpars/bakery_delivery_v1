@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://be6sn1jfqlgfe"]
+[gd_scene load_steps=49 format=4 uid="uid://be6sn1jfqlgfe"]
 
 [ext_resource type="Texture2D" uid="uid://i8s1qlimvxo2" path="res://assets/TopDownHouse_FloorsAndWalls.png" id="1_0hupy"]
 [ext_resource type="Texture2D" uid="uid://dbkbsyqyv2uhg" path="res://assets/interior free.png" id="2_2m0o1"]
@@ -4881,8 +4881,11 @@ func _process(delta: float) -> void:
 	pass
 "
 
+[sub_resource type="Theme" id="Theme_qhdf1"]
+
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
+position = Vector2(0, 8)
 
 [node name="baker_house_base" type="TileMap" parent="."]
 z_index = -1
@@ -4901,6 +4904,8 @@ scale = Vector2(1.08421, 0.954738)
 script = ExtResource("8_k3hdb")
 
 [node name="Camera2D" type="Camera2D" parent="baker_house_base/baker"]
+position = Vector2(9.33414, 7.33185)
+scale = Vector2(-0.00857261, -1.31662)
 zoom = Vector2(4, 4)
 
 [node name="house_interior" type="TileMap" parent="baker_house_base"]
@@ -4979,6 +4984,31 @@ script = SubResource("GDScript_xmmkg")
 [node name="FridgeArea" type="Area2D" parent="."]
 
 [node name="FridgeCollision" type="CollisionShape2D" parent="FridgeArea"]
+
+[node name="DialogueCanvas" type="CanvasLayer" parent="."]
+
+[node name="DialogueBox" type="Panel" parent="DialogueCanvas"]
+offset_left = -120.0
+offset_top = -136.0
+offset_right = -80.0
+offset_bottom = -96.0
+scale = Vector2(10.6619, 4.8019)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueCanvas/DialogueBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.99
+anchor_bottom = 0.958
+offset_left = 1.0
+offset_top = 2.0
+offset_right = -9.6
+offset_bottom = -12.32
+theme = SubResource("Theme_qhdf1")
+theme_override_font_sizes/italics_font_size = 1
+theme_override_font_sizes/normal_font_size = 5
+text = "Do you want to cook? "
+fit_content = true
+autowrap_mode = 2
 
 [connection signal="body_entered" from="baker_house_base/OvenArea" to="baker_house_base/OvenArea" method="_on_body_entered"]
 [connection signal="body_exited" from="PlayerDoorArea" to="PlayerDoorArea" method="_on_body_exited"]

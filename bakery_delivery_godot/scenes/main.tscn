@@ -4881,7 +4881,7 @@ func _process(delta: float) -> void:
 	pass
 "
 
-[sub_resource type="Theme" id="Theme_qhdf1"]
+[sub_resource type="Theme" id="Theme_dkxw3"]
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
@@ -4988,27 +4988,22 @@ script = SubResource("GDScript_xmmkg")
 
 [node name="DialogueCanvas" type="CanvasLayer" parent="."]
 
-[node name="DialogueBox" type="Panel" parent="DialogueCanvas"]
-offset_left = -120.0
-offset_top = -136.0
-offset_right = -80.0
-offset_bottom = -96.0
-scale = Vector2(10.6619, 4.8019)
+[node name="Panel" type="Panel" parent="DialogueCanvas"]
+offset_left = 96.0
+offset_top = 72.0
+offset_right = 136.0
+offset_bottom = 112.0
+scale = Vector2(9.87086, 5.77863)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="DialogueCanvas/DialogueBox"]
-layout_mode = 1
-anchors_preset = -1
-anchor_right = 0.99
-anchor_bottom = 0.958
-offset_left = 1.0
-offset_top = 2.0
-offset_right = -9.6
-offset_bottom = -12.32
-theme = SubResource("Theme_qhdf1")
-theme_override_font_sizes/normal_font_size = 5
-text = "Do you want to cook? "
-fit_content = true
-autowrap_mode = 2
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogueCanvas/Panel"]
+layout_mode = 0
+offset_right = 1000.0
+offset_bottom = 40.0
+scale = Vector2(0.05, 1.202)
+theme = SubResource("Theme_dkxw3")
+theme_override_font_sizes/normal_font_size = 24
+text = "testing testing"
+autowrap_mode = 0
 
 [connection signal="body_entered" from="baker_house_base/OvenArea" to="baker_house_base/OvenArea" method="_on_body_entered"]
 [connection signal="body_exited" from="PlayerDoorArea" to="PlayerDoorArea" method="_on_body_exited"]

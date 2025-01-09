@@ -4885,12 +4885,12 @@ func _process(delta: float) -> void:
 
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
-position = Vector2(0, 8)
+position = Vector2(-8, 8)
 
 [node name="baker_house_base" type="TileMap" parent="."]
 z_index = -1
 y_sort_enabled = true
-position = Vector2(79, 29)
+position = Vector2(80, 32)
 scale = Vector2(0.996673, 1)
 tile_set = SubResource("TileSet_lilro")
 format = 2
@@ -4902,11 +4902,6 @@ texture_filter = 1
 position = Vector2(26, 59)
 scale = Vector2(1.08421, 0.954738)
 script = ExtResource("8_k3hdb")
-
-[node name="Camera2D" type="Camera2D" parent="baker_house_base/baker"]
-position = Vector2(9.33414, 7.33185)
-scale = Vector2(-0.00857261, -1.31662)
-zoom = Vector2(4, 4)
 
 [node name="house_interior" type="TileMap" parent="baker_house_base"]
 y_sort_enabled = true
@@ -4971,6 +4966,12 @@ z_index = 1
 position = Vector2(23.5951, 11.5)
 shape = SubResource("RectangleShape2D_y2egl")
 
+[node name="Camera2D" type="Camera2D" parent="baker_house_base"]
+position = Vector2(40.1335, 72)
+rotation = 3.14159
+scale = Vector2(0.00929451, 1.25703)
+zoom = Vector2(9, 6.4)
+
 [node name="PlayerDoorArea" type="Area2D" parent="."]
 script = SubResource("GDScript_xg7sg")
 
@@ -5004,7 +5005,6 @@ offset_top = 2.0
 offset_right = -9.6
 offset_bottom = -12.32
 theme = SubResource("Theme_qhdf1")
-theme_override_font_sizes/italics_font_size = 1
 theme_override_font_sizes/normal_font_size = 5
 text = "Do you want to cook? "
 fit_content = true

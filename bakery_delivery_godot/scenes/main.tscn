@@ -4961,7 +4961,7 @@ tile_set = SubResource("TileSet_lilro")
 z_index = 1
 script = ExtResource("9_uipsa")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="baker_house_base/OvenArea"]
+[node name="OvenCollision" type="CollisionShape2D" parent="baker_house_base/OvenArea"]
 z_index = 1
 position = Vector2(23.5951, 11.5)
 shape = SubResource("RectangleShape2D_y2egl")
@@ -4975,6 +4975,10 @@ position = Vector2(13.5, 100.75)
 scale = Vector2(0.875001, 1)
 shape = SubResource("RectangleShape2D_lfw0x")
 script = SubResource("GDScript_xmmkg")
+
+[node name="FridgeArea" type="Area2D" parent="."]
+
+[node name="FridgeCollision" type="CollisionShape2D" parent="FridgeArea"]
 
 [connection signal="body_entered" from="baker_house_base/OvenArea" to="baker_house_base/OvenArea" method="_on_body_entered"]
 [connection signal="body_exited" from="PlayerDoorArea" to="PlayerDoorArea" method="_on_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://be6sn1jfqlgfe"]
+[gd_scene load_steps=50 format=4 uid="uid://be6sn1jfqlgfe"]
 
 [ext_resource type="Texture2D" uid="uid://i8s1qlimvxo2" path="res://assets/TopDownHouse_FloorsAndWalls.png" id="1_0hupy"]
 [ext_resource type="Texture2D" uid="uid://dbkbsyqyv2uhg" path="res://assets/interior free.png" id="2_2m0o1"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://c548xhftw3id3" path="res://scenes/baker.tscn" id="7_cei8p"]
 [ext_resource type="Script" path="res://scenes/baker.gd" id="8_k3hdb"]
 [ext_resource type="Script" path="res://scenes/oven_area.gd" id="9_uipsa"]
+[ext_resource type="Script" path="res://scenes/dialogue_canvas.gd" id="10_c8cb4"]
+[ext_resource type="FontFile" uid="uid://d2wy2205g1oxc" path="res://fonts/Jersey_15/Jersey15-Regular.ttf" id="11_0hvst"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_07l6c"]
 texture = ExtResource("1_0hupy")
@@ -4881,8 +4883,6 @@ func _process(delta: float) -> void:
 	pass
 "
 
-[sub_resource type="Theme" id="Theme_dkxw3"]
-
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(-8, 8)
@@ -4933,14 +4933,12 @@ tile_map_data = PackedByteArray("AAD+//v/AAAEAAwAAAD+//z/AAAEAA0AAAD+//3/AAAEAA4
 tile_set = SubResource("TileSet_shia6")
 
 [node name="fridge_closed" type="TileMapLayer" parent="baker_house_base/house_interior"]
-visible = false
 y_sort_enabled = true
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD8//r/AAACAAwAAAD8//v/AAACAA0AAAD8//z/AAACAA4AAAD8//3/AAACAA8AAAD9//r/AAADAAwAAAD9//v/AAADAA0AAAD9//z/AAADAA4AAAD9//3/AAADAA8AAAA=")
 tile_set = SubResource("TileSet_2hs83")
 
 [node name="fridge_open" type="TileMapLayer" parent="baker_house_base/house_interior"]
-visible = false
 y_sort_enabled = true
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD8//r/BQACAAwAAAD8//v/BQACAA0AAAD8//z/BQACAA4AAAD8//3/BQACAA8AAAD9//r/BQADAAwAAAD9//v/BQADAA0AAAD9//z/BQADAA4AAAD9//3/BQADAA8AAAA=")
@@ -4987,6 +4985,8 @@ script = SubResource("GDScript_xmmkg")
 [node name="FridgeCollision" type="CollisionShape2D" parent="FridgeArea"]
 
 [node name="DialogueCanvas" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("10_c8cb4")
 
 [node name="Panel" type="Panel" parent="DialogueCanvas"]
 offset_left = 96.0
@@ -4997,13 +4997,31 @@ scale = Vector2(9.87086, 5.77863)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="DialogueCanvas/Panel"]
 layout_mode = 0
-offset_right = 1000.0
+offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(0.05, 1.202)
-theme = SubResource("Theme_dkxw3")
-theme_override_font_sizes/normal_font_size = 24
-text = "testing testing"
-autowrap_mode = 0
+theme_override_fonts/normal_font = ExtResource("11_0hvst")
+theme_override_font_sizes/normal_font_size = 7
+text = "cook {dish}?"
+
+[node name="YesButton" type="Button" parent="DialogueCanvas/Panel"]
+layout_mode = 0
+offset_left = 1.62093
+offset_top = 22.1506
+offset_right = 35.6209
+offset_bottom = 53.1506
+scale = Vector2(0.367899, 0.512831)
+theme_override_fonts/font = ExtResource("11_0hvst")
+text = "yes"
+
+[node name="NoButton" type="Button" parent="DialogueCanvas/Panel"]
+layout_mode = 0
+offset_left = 25.9349
+offset_top = 20.7662
+offset_right = 53.9349
+offset_bottom = 51.7662
+scale = Vector2(0.44437, 0.550762)
+theme_override_fonts/font = ExtResource("11_0hvst")
+text = "no"
 
 [connection signal="body_entered" from="baker_house_base/OvenArea" to="baker_house_base/OvenArea" method="_on_body_entered"]
 [connection signal="body_exited" from="PlayerDoorArea" to="PlayerDoorArea" method="_on_body_exited"]

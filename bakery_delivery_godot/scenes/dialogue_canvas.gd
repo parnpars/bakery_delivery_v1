@@ -10,4 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
+func _set_visibility(is_visible:bool):
+	self.visible = is_visible;
+	
 	

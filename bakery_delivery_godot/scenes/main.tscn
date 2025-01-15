@@ -4984,18 +4984,18 @@ script = SubResource("GDScript_xmmkg")
 
 [node name="FridgeCollision" type="CollisionShape2D" parent="FridgeArea"]
 
-[node name="DialogueCanvas" type="CanvasLayer" parent="."]
+[node name="OvenDialogue" type="CanvasLayer" parent="."]
 visible = false
 script = ExtResource("10_c8cb4")
 
-[node name="Panel" type="Panel" parent="DialogueCanvas"]
+[node name="Panel" type="Panel" parent="OvenDialogue"]
 offset_left = 96.0
 offset_top = 72.0
 offset_right = 136.0
 offset_bottom = 112.0
 scale = Vector2(9.87086, 5.77863)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="DialogueCanvas/Panel"]
+[node name="RichTextLabel" type="RichTextLabel" parent="OvenDialogue/Panel"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -5003,7 +5003,7 @@ theme_override_fonts/normal_font = ExtResource("11_0hvst")
 theme_override_font_sizes/normal_font_size = 7
 text = "cook {dish}?"
 
-[node name="YesButton" type="Button" parent="DialogueCanvas/Panel"]
+[node name="YesButton" type="Button" parent="OvenDialogue/Panel"]
 layout_mode = 0
 offset_left = 1.62093
 offset_top = 22.1506
@@ -5013,7 +5013,7 @@ scale = Vector2(0.367899, 0.512831)
 theme_override_fonts/font = ExtResource("11_0hvst")
 text = "yes"
 
-[node name="NoButton" type="Button" parent="DialogueCanvas/Panel"]
+[node name="NoButton" type="Button" parent="OvenDialogue/Panel"]
 layout_mode = 0
 offset_left = 25.9349
 offset_top = 20.7662

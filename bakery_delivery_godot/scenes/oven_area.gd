@@ -1,5 +1,5 @@
 extends Area2D
-
+const DialogueScript = preload("res://scenes/dialogue_canvas.gd")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,5 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
+	var dialogue_instance = DialogueScript.new()
 	if (body.is_in_group)("player"):
-		print("cook?")
+		dialogue_instance._set_visibility(true)
+		

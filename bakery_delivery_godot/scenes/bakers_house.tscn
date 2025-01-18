@@ -1,19 +1,23 @@
-[gd_scene load_steps=50 format=4 uid="uid://be6sn1jfqlgfe"]
+[gd_scene load_steps=55 format=4 uid="uid://be6sn1jfqlgfe"]
 
-[ext_resource type="Texture2D" uid="uid://i8s1qlimvxo2" path="res://assets/TopDownHouse_FloorsAndWalls.png" id="1_0hupy"]
-[ext_resource type="Texture2D" uid="uid://dbkbsyqyv2uhg" path="res://assets/interior free.png" id="2_2m0o1"]
-[ext_resource type="Texture2D" uid="uid://8stxofr7gsdc" path="res://assets/TopDownHouse_DoorsAndWindows.png" id="3_itugr"]
-[ext_resource type="Texture2D" uid="uid://cij5yj7p26bhc" path="res://assets/TopDownHouse_FurnitureState1.png" id="4_miwpv"]
-[ext_resource type="Texture2D" uid="uid://dhi4qpk0mwe3l" path="res://assets/TopDownHouse_FurnitureState2.png" id="5_n1lqs"]
-[ext_resource type="Texture2D" uid="uid://mcx1s4b5ch3x" path="res://assets/TopDownHouse_SmallItems.png" id="6_0h1ax"]
-[ext_resource type="PackedScene" uid="uid://c548xhftw3id3" path="res://scenes/baker.tscn" id="7_cei8p"]
-[ext_resource type="Script" path="res://scenes/baker.gd" id="8_k3hdb"]
-[ext_resource type="Script" path="res://scenes/oven_area.gd" id="9_uipsa"]
-[ext_resource type="Script" path="res://scenes/dialogue_canvas.gd" id="10_c8cb4"]
-[ext_resource type="FontFile" uid="uid://d2wy2205g1oxc" path="res://fonts/Jersey_15/Jersey15-Regular.ttf" id="11_0hvst"]
+[ext_resource type="Texture2D" uid="uid://i8s1qlimvxo2" path="res://assets/TopDownHouse_FloorsAndWalls.png" id="1_t6xhp"]
+[ext_resource type="Texture2D" uid="uid://dbkbsyqyv2uhg" path="res://assets/interior free.png" id="2_jsrl1"]
+[ext_resource type="Texture2D" uid="uid://8stxofr7gsdc" path="res://assets/TopDownHouse_DoorsAndWindows.png" id="3_00bwd"]
+[ext_resource type="Texture2D" uid="uid://cij5yj7p26bhc" path="res://assets/TopDownHouse_FurnitureState1.png" id="4_wt8e6"]
+[ext_resource type="Texture2D" uid="uid://dhi4qpk0mwe3l" path="res://assets/TopDownHouse_FurnitureState2.png" id="5_amdxq"]
+[ext_resource type="Texture2D" uid="uid://mcx1s4b5ch3x" path="res://assets/TopDownHouse_SmallItems.png" id="6_yk6wj"]
+[ext_resource type="PackedScene" uid="uid://c548xhftw3id3" path="res://scenes/baker.tscn" id="7_l33f4"]
+[ext_resource type="Script" path="res://scenes/scripts/baker.gd" id="8_hr504"]
+[ext_resource type="Script" path="res://scenes/scripts/fridge_closed.gd" id="9_7akm3"]
+[ext_resource type="Script" path="res://scenes/scripts/fridge_open.gd" id="9_fvumv"]
+[ext_resource type="Script" path="res://scenes/scripts/oven_area.gd" id="10_jps8m"]
+[ext_resource type="Script" path="res://scenes/scripts/fridge_area.gd" id="11_ab5lx"]
+[ext_resource type="Script" path="res://scenes/scripts/dialogue_canvas.gd" id="12_65p7m"]
+[ext_resource type="FontFile" uid="uid://d2wy2205g1oxc" path="res://fonts/Jersey_15/Jersey15-Regular.ttf" id="13_yctqg"]
+[ext_resource type="Script" path="res://scenes/scripts/fridge_dialogue.gd" id="14_et05k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_07l6c"]
-texture = ExtResource("1_0hupy")
+texture = ExtResource("1_t6xhp")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(7.3125, 4.375, 5.875, 4.9375, 4.9375, 5.9375, 4.5, 8, 8, 8, 8, 4.875)
 1:0/0 = 0
@@ -198,7 +202,7 @@ texture = ExtResource("1_0hupy")
 17:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-3.625, -8, -5.375, -5.5625, -8, -4.625, -8, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ejdm"]
-texture = ExtResource("2_2m0o1")
+texture = ExtResource("2_jsrl1")
 0:0/0 = 0
 1:0/0 = 0
 3:0/0 = 0
@@ -240,7 +244,7 @@ texture = ExtResource("2_2m0o1")
 1:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aebe8"]
-texture = ExtResource("3_itugr")
+texture = ExtResource("3_00bwd")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -417,7 +421,7 @@ texture = ExtResource("3_itugr")
 17:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sbrug"]
-texture = ExtResource("4_miwpv")
+texture = ExtResource("4_wt8e6")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -653,7 +657,7 @@ texture = ExtResource("4_miwpv")
 12:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wkh4q"]
-texture = ExtResource("5_n1lqs")
+texture = ExtResource("5_amdxq")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -889,7 +893,7 @@ texture = ExtResource("5_n1lqs")
 12:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uihqg"]
-texture = ExtResource("6_0h1ax")
+texture = ExtResource("6_yk6wj")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -967,7 +971,7 @@ sources/7 = SubResource("TileSetAtlasSource_uihqg")
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v0m0o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dto3p"]
-texture = ExtResource("2_2m0o1")
+texture = ExtResource("2_jsrl1")
 0:0/0 = 0
 1:0/0 = 0
 3:0/0 = 0
@@ -1009,7 +1013,7 @@ texture = ExtResource("2_2m0o1")
 1:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vsn5t"]
-texture = ExtResource("3_itugr")
+texture = ExtResource("3_00bwd")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1186,7 +1190,7 @@ texture = ExtResource("3_itugr")
 17:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r7ls2"]
-texture = ExtResource("1_0hupy")
+texture = ExtResource("1_t6xhp")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 3.875, 6.25, 3.875, 4.125, 5.75, 4, 8, 8, 8)
 1:0/0 = 0
@@ -1355,7 +1359,7 @@ texture = ExtResource("1_0hupy")
 17:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.125, -6.375, -4.625, -5.25, -5.875, -4.625, -8, -8, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_60o1i"]
-texture = ExtResource("4_miwpv")
+texture = ExtResource("4_wt8e6")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1640,7 +1644,7 @@ texture = ExtResource("4_miwpv")
 12:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a2omt"]
-texture = ExtResource("5_n1lqs")
+texture = ExtResource("5_amdxq")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1898,7 +1902,7 @@ texture = ExtResource("5_n1lqs")
 12:17/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 6.125, -6.25, 5.5, -6.4375, -1.125, 2.1875, -1.125, 2.4375, 6.0625, 4.9375, 6.9375, 5.25, -1.375, 6.875, -8, -8, -8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xvnbx"]
-texture = ExtResource("6_0h1ax")
+texture = ExtResource("6_yk6wj")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1975,7 +1979,7 @@ sources/5 = SubResource("TileSetAtlasSource_a2omt")
 sources/6 = SubResource("TileSetAtlasSource_xvnbx")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_srxek"]
-texture = ExtResource("4_miwpv")
+texture = ExtResource("4_wt8e6")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2211,7 +2215,7 @@ texture = ExtResource("4_miwpv")
 12:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rhbhq"]
-texture = ExtResource("5_n1lqs")
+texture = ExtResource("5_amdxq")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2458,7 +2462,7 @@ sources/0 = SubResource("TileSetAtlasSource_srxek")
 sources/1 = SubResource("TileSetAtlasSource_rhbhq")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jo4db"]
-texture = ExtResource("2_2m0o1")
+texture = ExtResource("2_jsrl1")
 0:0/0 = 0
 1:0/0 = 0
 3:0/0 = 0
@@ -2500,7 +2504,7 @@ texture = ExtResource("2_2m0o1")
 1:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l6isx"]
-texture = ExtResource("3_itugr")
+texture = ExtResource("3_00bwd")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2677,7 +2681,7 @@ texture = ExtResource("3_itugr")
 17:9/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gxsfm"]
-texture = ExtResource("1_0hupy")
+texture = ExtResource("1_t6xhp")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2842,7 +2846,7 @@ texture = ExtResource("1_0hupy")
 17:8/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l5dpg"]
-texture = ExtResource("4_miwpv")
+texture = ExtResource("4_wt8e6")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -3079,7 +3083,7 @@ texture = ExtResource("4_miwpv")
 12:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_piqfa"]
-texture = ExtResource("5_n1lqs")
+texture = ExtResource("5_amdxq")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -3315,7 +3319,7 @@ texture = ExtResource("5_n1lqs")
 12:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l0lxq"]
-texture = ExtResource("6_0h1ax")
+texture = ExtResource("6_yk6wj")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -3391,7 +3395,7 @@ sources/4 = SubResource("TileSetAtlasSource_piqfa")
 sources/5 = SubResource("TileSetAtlasSource_l0lxq")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xxnwx"]
-texture = ExtResource("4_miwpv")
+texture = ExtResource("4_wt8e6")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -3633,7 +3637,7 @@ texture = ExtResource("4_miwpv")
 12:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kwsup"]
-texture = ExtResource("5_n1lqs")
+texture = ExtResource("5_amdxq")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -3874,7 +3878,7 @@ sources/0 = SubResource("TileSetAtlasSource_xxnwx")
 sources/1 = SubResource("TileSetAtlasSource_kwsup")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_boi4w"]
-texture = ExtResource("4_miwpv")
+texture = ExtResource("4_wt8e6")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -4118,7 +4122,7 @@ texture = ExtResource("4_miwpv")
 12:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w4xcy"]
-texture = ExtResource("5_n1lqs")
+texture = ExtResource("5_amdxq")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -4359,7 +4363,7 @@ sources/0 = SubResource("TileSetAtlasSource_boi4w")
 sources/1 = SubResource("TileSetAtlasSource_w4xcy")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wcx2p"]
-texture = ExtResource("4_miwpv")
+texture = ExtResource("4_wt8e6")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -4595,7 +4599,7 @@ texture = ExtResource("4_miwpv")
 12:17/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v47cm"]
-texture = ExtResource("5_n1lqs")
+texture = ExtResource("5_amdxq")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -4846,6 +4850,9 @@ sources/5 = SubResource("TileSetAtlasSource_v47cm")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y2egl"]
 size = Vector2(27.0567, 31)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rua3n"]
+size = Vector2(15.8246, 20)
+
 [sub_resource type="GDScript" id="GDScript_xg7sg"]
 script/source = "extends Area2D
 
@@ -4895,13 +4902,13 @@ scale = Vector2(0.996673, 1)
 tile_set = SubResource("TileSet_lilro")
 format = 2
 
-[node name="baker" parent="baker_house_base" groups=["player"] instance=ExtResource("7_cei8p")]
+[node name="baker" parent="baker_house_base" groups=["player"] instance=ExtResource("7_l33f4")]
 z_index = 2
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(26, 59)
 scale = Vector2(1.08421, 0.954738)
-script = ExtResource("8_k3hdb")
+script = ExtResource("8_hr504")
 
 [node name="house_interior" type="TileMap" parent="baker_house_base"]
 y_sort_enabled = true
@@ -4911,6 +4918,7 @@ tile_set = SubResource("TileSet_4by2j")
 format = 2
 
 [node name="oven_on" type="TileMapLayer" parent="baker_house_base/house_interior"]
+visible = false
 y_sort_enabled = true
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD+//v/AQAEAAwAAAD+//z/AQAEAA0AAAD+//3/AQAEAA4AAAD///v/AQAFAAwAAAD///z/AQAFAA0AAAD///3/AQAFAA4AAAA=")
@@ -4937,12 +4945,14 @@ y_sort_enabled = true
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD8//r/AAACAAwAAAD8//v/AAACAA0AAAD8//z/AAACAA4AAAD8//3/AAACAA8AAAD9//r/AAADAAwAAAD9//v/AAADAA0AAAD9//z/AAADAA4AAAD9//3/AAADAA8AAAA=")
 tile_set = SubResource("TileSet_2hs83")
+script = ExtResource("9_7akm3")
 
 [node name="fridge_open" type="TileMapLayer" parent="baker_house_base/house_interior"]
 y_sort_enabled = true
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD8//r/BQACAAwAAAD8//v/BQACAA0AAAD8//z/BQACAA4AAAD8//3/BQACAA8AAAD9//r/BQADAAwAAAD9//v/BQADAA0AAAD9//z/BQADAA4AAAD9//3/BQADAA8AAAA=")
 tile_set = SubResource("TileSet_kjx35")
+script = ExtResource("9_fvumv")
 
 [node name="Layer1" type="TileMapLayer" parent="baker_house_base/house_interior"]
 z_index = 1
@@ -4950,14 +4960,14 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAAAAPv/BAAGAAwAAAAAAPz/BAAGAA0AAAAAAP3/BAAGAA4AAAABAPv/BAAHAAwAAAABAPz/BAAHAA0AAAABAP3/BAAHAA4AAAACAPv/BAAIAAwAAAACAPz/BAAIAA0AAAACAP3/BAAIAA4AAAADAPv/BAAJAAwAAAADAPz/BAAJAA0AAAADAP3/BAAJAA4AAAAEAPv/BAAKAAwAAAAEAPz/BAAKAA0AAAAEAP3/BAAKAA4AAAAFAPv/BAALAAwAAAAFAPz/BAALAA0AAAAFAP3/BAALAA4AAAAGAPv/BAAMAAwAAAAGAPz/BAAMAA0AAAAGAP3/BAAMAA4AAAD7/wMABAAFAAoAAAD7/wQABAAFAAsAAAD8/wMABAAGAAoAAAD8/wQABAAGAAsAAAD9/wMABAAHAAoAAAD9/wQABAAHAAsAAAD+/wMABAAIAAoAAAD+/wQABAAIAAsAAAD5//z/BQADAAcAAAD5//3/BQADAAgAAAD5//7/BQADAAkAAAD6/wIABQAGAAcAAAD6/wMABQAGAAgAAAD6/wQABQAGAAkAAAABAAEABQAAAAIAAAABAAIABQAAAAMAAAACAAEABQABAAIAAAACAAIABQABAAMAAAADAAEABQACAAIAAAADAAIABQACAAMAAAD8/wUABQAFAAIAAAD8/wYABQAFAAMAAAD9/wUABQAGAAIAAAD9/wYABQAGAAMAAAABAP//BQAIAAAAAAABAAAABQAIAAEAAAADAP//BQAIAAAAAAADAAAABQAIAAEAAAABAAMABQAKAAEAAAADAAMABQAKAAEAAAD5/wUABAALAAcAAAD5/wYABAALAAgAAAD5/wcABAALAAkAAAD6/wUABAAMAAcAAAD6/wYABAAMAAgAAAD6/wcABAAMAAkAAAAFAAYABQALABAAAAAFAAcABQALABEAAAAGAAYABQAMABAAAAAGAAcABQAMABEAAAA=")
 tile_set = SubResource("TileSet_4by2j")
 
-[node name="Layer0" type="TileMapLayer" parent="baker_house_base"]
+[node name="Layer1" type="TileMapLayer" parent="baker_house_base"]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD8////AAABAAAAAAD9////AAABAAAAAAD+////AAABAAAAAAD/////AAABAAAAAAAAAP//AAABAAAAAAABAP//AAABAAAAAAACAP//AAABAAAAAAADAP//AAABAAAAAAAEAP//AAABAAAAAAAFAP//AAABAAAAAAAGAP//AAABAAAAAAAIAP//AAABAAAAAAAHAP//AAABAAAAAAD7////AAAAAAAAAAD7/wAAAAAAAAEAAAD7/wEAAAAAAAEAAAD7/wYAAAAAAAEAAAD7/wgAAAAAAAEAAAD7/wcAAAAAAAEAAAD7/wkAAAAAAAgAAAD8/wkAAAABAAgAAAD9/wkAAAABAAgAAAD+/wkAAAABAAgAAAD//wkAAAABAAgAAAAAAAkAAAABAAgAAAABAAkAAAABAAgAAAACAAkAAAABAAgAAAADAAkAAAABAAgAAAAEAAkAAAABAAgAAAAFAAkAAAABAAgAAAAGAAkAAAABAAgAAAAHAAkAAAABAAgAAAAIAAkAAAABAAgAAAAJAAkAAAARAAgAAAAJAAgAAAARAAUAAAAJAAYAAAARAAUAAAAJAAUAAAARAAUAAAAJAAQAAAARAAUAAAAJAAMAAAARAAUAAAAJAAIAAAARAAUAAAAJAAEAAAARAAUAAAAJAP//AAARAAAAAAAJAAAAAAARAAQAAAD7/wMAAAAAAAMAAAD7/wQAAAAAAAMAAAD7/wUAAAAAAAMAAAD7/wIAAAAAAAEAAAD8/wIAAAABAAEAAAD9/wIAAAABAAEAAAD+/wIAAAABAAEAAAD//wIAAAABAAEAAAAAAAIAAAABAAEAAAABAAIAAAABAAEAAAACAAIAAAABAAEAAAADAAIAAAABAAEAAAAEAAIAAAABAAEAAAAFAAIAAAABAAEAAAAGAAIAAAABAAEAAAAHAAIAAAABAAEAAAAIAAIAAAABAAEAAAAIAAEAAAABAAEAAAAIAAAAAAABAAEAAAAHAAAAAAABAAEAAAAGAAAAAAABAAEAAAAFAAAAAAABAAEAAAAEAAAAAAABAAEAAAADAAAAAAABAAEAAAACAAAAAAABAAEAAAABAAAAAAABAAEAAAAAAAAAAAABAAEAAAD+/wAAAAABAAEAAAD9/wAAAAABAAEAAAD8/wAAAAABAAEAAAD8/wEAAAABAAEAAAD9/wEAAAABAAEAAAD+/wEAAAABAAEAAAD//wEAAAABAAEAAAAAAAEAAAABAAEAAAABAAEAAAABAAEAAAACAAEAAAABAAEAAAADAAEAAAABAAEAAAAEAAEAAAABAAEAAAAFAAEAAAABAAEAAAAGAAEAAAABAAEAAAAHAAEAAAABAAEAAAD8/wcAAAAEAAUAAAD9/wcAAAAEAAUAAAD+/wcAAAAEAAUAAAD//wcAAAAEAAUAAAAAAAcAAAAEAAUAAAABAAcAAAAEAAUAAAACAAcAAAAEAAUAAAADAAcAAAAEAAUAAAAEAAcAAAAEAAUAAAAFAAcAAAAEAAUAAAAGAAcAAAAEAAUAAAAHAAcAAAAEAAUAAAAIAAcAAAAEAAUAAAAIAAgAAAAEAAUAAAAHAAgAAAAEAAUAAAAGAAgAAAAEAAUAAAAFAAgAAAAEAAUAAAAEAAgAAAAEAAUAAAADAAgAAAAEAAUAAAACAAgAAAAEAAUAAAABAAgAAAAEAAUAAAAAAAgAAAAEAAUAAAD//wgAAAAEAAUAAAD+/wgAAAAEAAUAAAD9/wgAAAAEAAUAAAD8/wgAAAAEAAUAAAD8/wYAAAAEAAUAAAD9/wYAAAAEAAUAAAD+/wYAAAAEAAUAAAD//wYAAAAEAAUAAAAAAAYAAAAEAAUAAAABAAYAAAAEAAUAAAACAAYAAAAEAAUAAAADAAYAAAAEAAUAAAAEAAYAAAAEAAUAAAAFAAYAAAAEAAUAAAAGAAYAAAAEAAUAAAAHAAYAAAAEAAUAAAAIAAYAAAAEAAUAAAD8/wMAAAAHAAUAAAD8/wQAAAAHAAUAAAD8/wUAAAAHAAUAAAD9/wUAAAAHAAUAAAD+/wUAAAAHAAUAAAD//wUAAAAHAAUAAAAAAAUAAAAHAAUAAAABAAUAAAAHAAUAAAACAAUAAAAHAAUAAAADAAUAAAAHAAUAAAAEAAUAAAAHAAUAAAAFAAUAAAAHAAUAAAAGAAUAAAAHAAUAAAAHAAUAAAAHAAUAAAAIAAUAAAAHAAUAAAAIAAQAAAAHAAUAAAAIAAMAAAAHAAUAAAAHAAMAAAAHAAUAAAAGAAMAAAAHAAUAAAAFAAMAAAAHAAUAAAAEAAMAAAAHAAUAAAADAAMAAAAHAAUAAAACAAMAAAAHAAUAAAABAAMAAAAHAAUAAAAAAAMAAAAHAAUAAAD//wMAAAAHAAUAAAD+/wMAAAAHAAUAAAD9/wMAAAAHAAUAAAD9/wQAAAAHAAUAAAD+/wQAAAAHAAUAAAD//wQAAAAHAAUAAAAAAAQAAAAHAAUAAAABAAQAAAAHAAUAAAACAAQAAAAHAAUAAAADAAQAAAAHAAUAAAAEAAQAAAAHAAUAAAAFAAQAAAAHAAUAAAAGAAQAAAAHAAUAAAAHAAQAAAAHAAUAAAAJAAcAAAARAAUAAAD//wAAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_lilro")
 
 [node name="OvenArea" type="Area2D" parent="baker_house_base"]
 z_index = 1
-script = ExtResource("9_uipsa")
+script = ExtResource("10_jps8m")
 
 [node name="OvenCollision" type="CollisionShape2D" parent="baker_house_base/OvenArea"]
 z_index = 1
@@ -4970,6 +4980,17 @@ rotation = 3.14159
 scale = Vector2(0.00929451, 1.25703)
 zoom = Vector2(9, 6.4)
 
+[node name="FridgeArea" type="Area2D" parent="baker_house_base"]
+position = Vector2(-80.267, -32)
+scale = Vector2(1.00334, 1)
+script = ExtResource("11_ab5lx")
+
+[node name="FridgeCollision" type="CollisionShape2D" parent="baker_house_base/FridgeArea"]
+z_index = 1
+position = Vector2(71.9998, 48)
+scale = Vector2(1.28191, 1.08409)
+shape = SubResource("RectangleShape2D_rua3n")
+
 [node name="PlayerDoorArea" type="Area2D" parent="."]
 script = SubResource("GDScript_xg7sg")
 
@@ -4980,13 +5001,9 @@ scale = Vector2(0.875001, 1)
 shape = SubResource("RectangleShape2D_lfw0x")
 script = SubResource("GDScript_xmmkg")
 
-[node name="FridgeArea" type="Area2D" parent="."]
-
-[node name="FridgeCollision" type="CollisionShape2D" parent="FridgeArea"]
-
 [node name="OvenDialogue" type="CanvasLayer" parent="."]
 visible = false
-script = ExtResource("10_c8cb4")
+script = ExtResource("12_65p7m")
 
 [node name="Panel" type="Panel" parent="OvenDialogue"]
 offset_left = 96.0
@@ -4999,7 +5016,7 @@ scale = Vector2(9.87086, 5.77863)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("11_0hvst")
+theme_override_fonts/normal_font = ExtResource("13_yctqg")
 theme_override_font_sizes/normal_font_size = 7
 text = "cook {dish}?"
 
@@ -5010,7 +5027,7 @@ offset_top = 22.1506
 offset_right = 35.6209
 offset_bottom = 53.1506
 scale = Vector2(0.367899, 0.512831)
-theme_override_fonts/font = ExtResource("11_0hvst")
+theme_override_fonts/font = ExtResource("13_yctqg")
 text = "yes"
 
 [node name="NoButton" type="Button" parent="OvenDialogue/Panel"]
@@ -5020,8 +5037,32 @@ offset_top = 20.7662
 offset_right = 53.9349
 offset_bottom = 51.7662
 scale = Vector2(0.44437, 0.550762)
-theme_override_fonts/font = ExtResource("11_0hvst")
+theme_override_fonts/font = ExtResource("13_yctqg")
+text = "no"
+
+[node name="FridgeDialogue" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("14_et05k")
+
+[node name="Panel" type="Panel" parent="FridgeDialogue"]
+offset_left = 96.0
+offset_top = 72.0
+offset_right = 136.0
+offset_bottom = 112.0
+scale = Vector2(9.87086, 5.77863)
+
+[node name="NoButton" type="Button" parent="FridgeDialogue/Panel"]
+layout_mode = 0
+offset_left = 25.9349
+offset_top = 20.7662
+offset_right = 53.9349
+offset_bottom = 51.7662
+scale = Vector2(0.44437, 0.550762)
+theme_override_fonts/font = ExtResource("13_yctqg")
 text = "no"
 
 [connection signal="body_entered" from="baker_house_base/OvenArea" to="baker_house_base/OvenArea" method="_on_body_entered"]
+[connection signal="body_exited" from="baker_house_base/OvenArea" to="baker_house_base/OvenArea" method="_on_body_exited"]
+[connection signal="body_entered" from="baker_house_base/FridgeArea" to="baker_house_base/FridgeArea" method="_on_body_entered"]
+[connection signal="body_exited" from="baker_house_base/FridgeArea" to="baker_house_base/FridgeArea" method="_on_body_exited"]
 [connection signal="body_exited" from="PlayerDoorArea" to="PlayerDoorArea" method="_on_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://be6sn1jfqlgfe"]
+[gd_scene load_steps=57 format=4 uid="uid://be6sn1jfqlgfe"]
 
 [ext_resource type="Texture2D" uid="uid://i8s1qlimvxo2" path="res://assets/TopDownHouse_FloorsAndWalls.png" id="1_t6xhp"]
 [ext_resource type="Texture2D" uid="uid://dbkbsyqyv2uhg" path="res://assets/interior free.png" id="2_jsrl1"]
@@ -9,7 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://c548xhftw3id3" path="res://scenes/baker.tscn" id="7_l33f4"]
 [ext_resource type="Script" path="res://scenes/scripts/baker.gd" id="8_hr504"]
 [ext_resource type="Script" path="res://scenes/scripts/fridge_closed.gd" id="9_7akm3"]
+[ext_resource type="Script" path="res://scenes/scripts/oven_on.gd" id="9_c1j1i"]
 [ext_resource type="Script" path="res://scenes/scripts/fridge_open.gd" id="9_fvumv"]
+[ext_resource type="Script" path="res://scenes/scripts/oven_off.gd" id="10_8g4gf"]
 [ext_resource type="Script" path="res://scenes/scripts/oven_area.gd" id="10_jps8m"]
 [ext_resource type="Script" path="res://scenes/scripts/fridge_area.gd" id="11_ab5lx"]
 [ext_resource type="Script" path="res://scenes/scripts/dialogue_canvas.gd" id="12_65p7m"]
@@ -4923,6 +4925,7 @@ y_sort_enabled = true
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD+//v/AQAEAAwAAAD+//z/AQAEAA0AAAD+//3/AQAEAA4AAAD///v/AQAFAAwAAAD///z/AQAFAA0AAAD///3/AQAFAA4AAAA=")
 tile_set = SubResource("TileSet_qnpx1")
+script = ExtResource("9_c1j1i")
 
 [node name="house_decor" type="TileMapLayer" parent="baker_house_base/house_interior"]
 z_index = 4
@@ -4939,6 +4942,7 @@ use_parent_material = true
 position = Vector2(0.137879, 1.38889)
 tile_map_data = PackedByteArray("AAD+//v/AAAEAAwAAAD+//z/AAAEAA0AAAD+//3/AAAEAA4AAAD///v/AAAFAAwAAAD///z/AAAFAA0AAAD///3/AAAFAA4AAAA=")
 tile_set = SubResource("TileSet_shia6")
+script = ExtResource("10_8g4gf")
 
 [node name="fridge_closed" type="TileMapLayer" parent="baker_house_base/house_interior"]
 y_sort_enabled = true

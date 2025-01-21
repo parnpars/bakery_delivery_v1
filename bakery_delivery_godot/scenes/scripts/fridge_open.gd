@@ -1,5 +1,5 @@
 extends TileMapLayer
-var is_visible = false
+static var is_visible = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

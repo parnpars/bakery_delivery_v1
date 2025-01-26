@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://be6sn1jfqlgfe"]
+[gd_scene load_steps=66 format=4 uid="uid://be6sn1jfqlgfe"]
 
 [ext_resource type="Texture2D" uid="uid://i8s1qlimvxo2" path="res://assets/TopDownHouse_FloorsAndWalls.png" id="1_t6xhp"]
 [ext_resource type="Texture2D" uid="uid://dbkbsyqyv2uhg" path="res://assets/interior free.png" id="2_jsrl1"]
@@ -18,6 +18,13 @@
 [ext_resource type="FontFile" uid="uid://d2wy2205g1oxc" path="res://fonts/Jersey_15/Jersey15-Regular.ttf" id="13_yctqg"]
 [ext_resource type="Script" path="res://scenes/scripts/fridge_dialogue.gd" id="14_et05k"]
 [ext_resource type="Texture2D" uid="uid://bcuum6sm8gsus" path="res://assets/09_baguette.png" id="18_m1tru"]
+[ext_resource type="Texture2D" uid="uid://e7vk8hhkhqm0" path="res://assets/11_bun.png" id="19_gsufh"]
+[ext_resource type="Texture2D" uid="uid://cv488mm71bg5i" path="res://assets/20_bagel.png" id="20_l02dj"]
+[ext_resource type="Texture2D" uid="uid://dybgjberww1tv" path="res://assets/22_cheesecake.png" id="21_u25fq"]
+[ext_resource type="Texture2D" uid="uid://c7fcnb18nf2gm" path="res://assets/28_cookies.png" id="22_i0l4w"]
+[ext_resource type="Texture2D" uid="uid://crxv7fd1joipp" path="res://assets/34_donut.png" id="23_bks0b"]
+[ext_resource type="Texture2D" uid="uid://bogtouxpty7os" path="res://assets/75_pudding.png" id="24_ehvd7"]
+[ext_resource type="Texture2D" uid="uid://ca325lvfslxdq" path="res://assets/90_strawberrycake.png" id="25_3ceqq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_07l6c"]
 texture = ExtResource("1_t6xhp")
@@ -4893,6 +4900,8 @@ func _process(delta: float) -> void:
 	pass
 "
 
+[sub_resource type="Theme" id="Theme_sw550"]
+
 [node name="Node2D" type="Node2D"]
 y_sort_enabled = true
 position = Vector2(-8, 8)
@@ -5007,10 +5016,10 @@ shape = SubResource("RectangleShape2D_lfw0x")
 script = SubResource("GDScript_xmmkg")
 
 [node name="OvenDialogue" type="CanvasLayer" parent="."]
-visible = false
 script = ExtResource("12_65p7m")
 
 [node name="Panel" type="Panel" parent="OvenDialogue"]
+visible = false
 offset_left = 96.0
 offset_top = 72.0
 offset_right = 136.0
@@ -5055,77 +5064,101 @@ offset_right = 136.0
 offset_bottom = 112.0
 scale = Vector2(9.87086, 5.77863)
 
-[node name="BaguetteBtn" type="TextureButton" parent="FridgeDialogue/Panel"]
+[node name="PuddingBtn" type="Button" parent="FridgeDialogue/Panel"]
 layout_mode = 0
-offset_left = 17.0198
+offset_left = 1.62093
 offset_top = 26.3038
-offset_right = 49.0198
-offset_bottom = 58.3038
-scale = Vector2(0.271736, 0.337303)
-texture_normal = ExtResource("18_m1tru")
+offset_right = 41.6209
+offset_bottom = 66.3038
+scale = Vector2(0.215864, 0.278825)
+theme = SubResource("Theme_sw550")
+theme_override_fonts/font = ExtResource("13_yctqg")
+theme_override_icons/icon = ExtResource("24_ehvd7")
 
-[node name="BunBtn" type="TextureButton" parent="FridgeDialogue/Panel"]
+[node name="BaguetteBtn" type="Button" parent="FridgeDialogue/Panel"]
 layout_mode = 0
-offset_left = 17.0198
+offset_left = 20.2617
 offset_top = 26.3038
-offset_right = 49.0198
-offset_bottom = 58.3038
-scale = Vector2(0.271736, 0.337303)
-texture_normal = ExtResource("18_m1tru")
+offset_right = 60.2617
+offset_bottom = 66.3038
+scale = Vector2(0.200046, 0.270176)
+theme = SubResource("Theme_sw550")
+theme_override_fonts/font = ExtResource("13_yctqg")
+theme_override_icons/icon = ExtResource("18_m1tru")
 
-[node name="BagelBtn" type="TextureButton" parent="FridgeDialogue/Panel"]
+[node name="BunBtn" type="Button" parent="FridgeDialogue/Panel"]
 layout_mode = 0
-offset_left = 17.0198
+offset_left = 29.9873
 offset_top = 26.3038
-offset_right = 49.0198
-offset_bottom = 58.3038
-scale = Vector2(0.271736, 0.337303)
-texture_normal = ExtResource("18_m1tru")
+offset_right = 69.9873
+offset_bottom = 66.3038
+scale = Vector2(0.211985, 0.279591)
+theme = SubResource("Theme_sw550")
+theme_override_fonts/font = ExtResource("13_yctqg")
+theme_override_icons/icon = ExtResource("19_gsufh")
 
-[node name="CheesecakeBtn" type="TextureButton" parent="FridgeDialogue/Panel"]
+[node name="BagelBtn" type="Button" parent="FridgeDialogue/Panel"]
 layout_mode = 0
-offset_left = 17.0198
-offset_top = 26.3038
-offset_right = 49.0198
-offset_bottom = 58.3038
-scale = Vector2(0.271736, 0.337303)
-texture_normal = ExtResource("18_m1tru")
+offset_left = 21.8826
+offset_top = 11.0753
+offset_right = 61.8826
+offset_bottom = 51.0753
+scale = Vector2(0.217083, 0.294612)
+theme = SubResource("Theme_sw550")
+theme_override_fonts/font = ExtResource("13_yctqg")
+theme_override_icons/icon = ExtResource("20_l02dj")
 
-[node name="CookiesBtn" type="TextureButton" parent="FridgeDialogue/Panel"]
+[node name="CheesecakeBtn" type="Button" parent="FridgeDialogue/Panel"]
 layout_mode = 0
-offset_left = 17.0198
-offset_top = 26.3038
-offset_right = 49.0198
-offset_bottom = 58.3038
-scale = Vector2(0.271736, 0.337303)
-texture_normal = ExtResource("18_m1tru")
+offset_left = 30.7977
+offset_top = 11.0753
+offset_right = 70.7977
+offset_bottom = 51.0753
+scale = Vector2(0.219443, 0.28639)
+theme = SubResource("Theme_sw550")
+theme_override_fonts/font = ExtResource("13_yctqg")
+theme_override_icons/icon = ExtResource("21_u25fq")
 
-[node name="DonutBtn" type="TextureButton" parent="FridgeDialogue/Panel"]
+[node name="CookiesBtn" type="Button" parent="FridgeDialogue/Panel"]
 layout_mode = 0
-offset_left = 17.0198
-offset_top = 26.3038
-offset_right = 49.0198
-offset_bottom = 58.3038
-scale = Vector2(0.271736, 0.337303)
-texture_normal = ExtResource("18_m1tru")
+offset_left = 12.157
+offset_top = 11.0753
+offset_right = 52.157
+offset_bottom = 51.0753
+scale = Vector2(0.227623, 0.291495)
+theme = SubResource("Theme_sw550")
+theme_override_fonts/font = ExtResource("13_yctqg")
+theme_override_icons/icon = ExtResource("22_i0l4w")
 
-[node name="LemonpieBtn" type="TextureButton" parent="FridgeDialogue/Panel"]
+[node name="DonutBtn" type="Button" parent="FridgeDialogue/Panel"]
 layout_mode = 0
-offset_left = 17.0198
-offset_top = 26.3038
-offset_right = 49.0198
-offset_bottom = 58.3038
-scale = Vector2(0.271736, 0.337303)
-texture_normal = ExtResource("18_m1tru")
+offset_left = 2.4314
+offset_top = 11.0753
+offset_right = 42.4314
+offset_bottom = 51.0753
+scale = Vector2(0.224583, 0.281947)
+theme = SubResource("Theme_sw550")
+theme_override_fonts/font = ExtResource("13_yctqg")
+theme_override_icons/icon = ExtResource("23_bks0b")
 
-[node name="CheesecakeBtn5" type="TextureButton" parent="FridgeDialogue/Panel"]
+[node name="StrawberryCakeBtn" type="Button" parent="FridgeDialogue/Panel"]
 layout_mode = 0
-offset_left = 17.0198
+offset_left = 10.5361
 offset_top = 26.3038
-offset_right = 49.0198
-offset_bottom = 58.3038
-scale = Vector2(0.271736, 0.337303)
-texture_normal = ExtResource("18_m1tru")
+offset_right = 50.5361
+offset_bottom = 66.3038
+scale = Vector2(0.216471, 0.273556)
+theme = SubResource("Theme_sw550")
+theme_override_fonts/font = ExtResource("13_yctqg")
+theme_override_icons/icon = ExtResource("25_3ceqq")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="FridgeDialogue/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("13_yctqg")
+theme_override_font_sizes/normal_font_size = 7
+text = "make..."
 
 [connection signal="body_entered" from="baker_house_base/OvenArea" to="baker_house_base/OvenArea" method="_on_body_entered"]
 [connection signal="body_exited" from="baker_house_base/OvenArea" to="baker_house_base/OvenArea" method="_on_body_exited"]

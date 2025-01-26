@@ -5016,10 +5016,10 @@ shape = SubResource("RectangleShape2D_lfw0x")
 script = SubResource("GDScript_xmmkg")
 
 [node name="OvenDialogue" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("12_65p7m")
 
 [node name="Panel" type="Panel" parent="OvenDialogue"]
-visible = false
 offset_left = 96.0
 offset_top = 72.0
 offset_right = 136.0
@@ -5055,6 +5055,7 @@ theme_override_fonts/font = ExtResource("13_yctqg")
 text = "no"
 
 [node name="FridgeDialogue" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("14_et05k")
 
 [node name="Panel" type="Panel" parent="FridgeDialogue"]
@@ -5103,17 +5104,17 @@ offset_left = 21.8826
 offset_top = 11.0753
 offset_right = 61.8826
 offset_bottom = 51.0753
-scale = Vector2(0.217083, 0.294612)
+scale = Vector2(0.208485, 0.293077)
 theme = SubResource("Theme_sw550")
 theme_override_fonts/font = ExtResource("13_yctqg")
 theme_override_icons/icon = ExtResource("20_l02dj")
 
 [node name="CheesecakeBtn" type="Button" parent="FridgeDialogue/Panel"]
 layout_mode = 0
-offset_left = 30.7977
-offset_top = 11.0753
-offset_right = 70.7977
-offset_bottom = 51.0753
+offset_left = 31.0
+offset_top = 11.0
+offset_right = 71.0
+offset_bottom = 51.0
 scale = Vector2(0.219443, 0.28639)
 theme = SubResource("Theme_sw550")
 theme_override_fonts/font = ExtResource("13_yctqg")
@@ -5154,8 +5155,8 @@ theme_override_icons/icon = ExtResource("25_3ceqq")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="FridgeDialogue/Panel"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 29.0
+offset_bottom = 8.0
 theme_override_fonts/normal_font = ExtResource("13_yctqg")
 theme_override_font_sizes/normal_font_size = 7
 text = "make..."
